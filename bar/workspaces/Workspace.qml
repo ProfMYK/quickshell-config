@@ -1,8 +1,16 @@
-import Quickshell // for PanelWindow
-import Quickshell.Io;
-import QtQuick // for Text
-import Quickshell.Hyprland
+import Quickshell
+import QtQuick
 
-Text {
-    text: "Hello World"
+import "../"
+
+Rectangle {
+    height: 20
+    width: 20
+    color: "BLACK"
+    border.width: 2
+    border.color: "GRAY"
+
+    BarText {
+        text: "1"
+    }
 }

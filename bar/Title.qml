@@ -4,29 +4,42 @@ import QtQuick // for Text
 import Quickshell.Hyprland
 
 import "../Theme.qml" as Theme
+import "."
 
-Text {
+Box {
+    anchors.centerIn: parent
+    anchors.top: parent.top
     property string windowTitle
 
-    anchors.centerIn: parent
-    text: windowTitle
+    anchors.topMargin: 100
 
-    Process {
-        id: titleProc
-        command: ["sh", "-c", "hyprctl activewindow | grep title: | sed 's/[^:]*://g'"]
-        running: true
+    BarText {
+        anchors.centerIn: parent
+        color: "WHITE"
+        id: titleText
 
-        stdout: SplitParser {
-            onRead: data => windowTitle = data
+        text: windowTitle
+
+        Process {
+            id: titleProc
+            command: ["sh", "-c", "hyprctl activewindow | grep title: | sed 's/[^:]*: //g'"]
+            running: true
+
+            stdout: SplitParser {
+                onRead: data => windowTitle = data
+            }
+        }
+
+        function hyprEvent(e) {
+            titleProc.running = true;
+        }
+
+        Component.onCompleted: {
+            Hyprland.rawEvent.connect(hyprEvent)
         }
     }
 
-    function hyprEvent(e) {
-        titleProc.running = true;
-    }
-
-    Component.onCompleted: {
-        Hyprland.rawEvent.connect(hyprEvent)
-    }
+    width: titleText.implicitWidth + 15
+    height: 20 
 
 }

@@ -1,8 +1,18 @@
-import Quickshell // for PanelWindow
-import Quickshell.Io;
-import QtQuick // for Text
+import Quickshell
+import QtQuick.Layouts
+import QtQuick
 import Quickshell.Hyprland
 
 import "."
 
-Workspace {}
+RowLayout {
+    anchors.verticalCenter: parent.verticalCenter
+    anchors.left: parent.left
+    anchors.leftMargin: 20
+
+    Workspace {}
+    Workspace {}
+    Workspace {}
+    Workspace {}
+    Workspace {}
+}

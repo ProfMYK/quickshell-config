@@ -13,7 +13,9 @@ PanelWindow {
         right: true
     }
 
+
     implicitHeight: 30
+    color: "TRANSPARENT"
 
     Workspaces {}
     Title {}
