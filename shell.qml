@@ -4,10 +4,10 @@ import QtQuick // for Text
 import Quickshell.Hyprland
 
 import "bar"
-import "clock"
+import "background"
 
 Scope {
     Bar {}
-    Clock {}
+    Background {}
 }
 

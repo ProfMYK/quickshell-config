@@ -2,8 +2,7 @@ import QtQuick
 import Quickshell.Io
 import Quickshell
 
-import "../components"
-import ".."
+import "."
 
 PanelWindow {
     exclusionMode: ExclusionMode.Ignore
@@ -24,9 +23,7 @@ PanelWindow {
         right: 0
     }
 
-    BarText {
-        anchors.centerIn: parent
-        text: Time.minutes 
-        font.pointSize: 100
-    }
+    Clock {}
+    Splash {}
 }
+

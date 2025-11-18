@@ -6,6 +6,7 @@ import Quickshell.Hyprland
 import ".";
 import "workspaces"
 import "../components"
+import "blocks"
 
 PanelWindow {
     anchors {
@@ -24,9 +25,10 @@ PanelWindow {
     implicitHeight: 40
     color: "TRANSPARENT"
 
-    aboveWindows: false
+    // aboveWindows: false
 
     Workspaces {}
     Title {}
+    Blocks {}
 }
 

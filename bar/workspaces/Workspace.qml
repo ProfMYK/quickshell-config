@@ -6,9 +6,7 @@ import "../../components"
 import "../.."
 
 Box {
-    height: 30
-    width: 30
-
+    id: root
     property HyprlandWorkspace workspace
     color: getBackgroundColor(workspace.focused, mouseArea.containsMouse) 
 
@@ -27,13 +25,16 @@ Box {
         if (focused) {
             return Colors.border;
         }
-
         return Colors.background;
     }
 
     MouseArea {
         id: mouseArea
         anchors.fill: parent
+
+        onClicked: {
+            Hyprland.dispatch("workspace " + workspace.name)
+        }
     }
 
     BarText {
@@ -42,7 +43,7 @@ Box {
 
     Behavior on color {
         ColorAnimation {
-            duration: 150
+            duration: 100
         }
     }
 }

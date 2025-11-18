@@ -9,4 +9,10 @@ Text {
     font.family: "DepartureMono Nerd Font"
     color: Colors.foreground
     anchors.centerIn: parent
+    Behavior on opacity { 
+        NumberAnimation { 
+            duration: 100 
+            easing.type: Easing.InOutQuad
+        } 
+    } 
 }
