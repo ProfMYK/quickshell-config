@@ -1,9 +1,12 @@
-import QtQuick
+import Quickshell // for PanelWindow
+import Quickshell.Io;
+import QtQuick // for Text
+import Quickshell.Hyprland
 
-import "../"
+import ".."
 
 Rectangle {
-    color: Theme.background
+    color: Colors.background
     border.width: 2
-    border.color: Theme.border
+    border.color: Colors.border
 }

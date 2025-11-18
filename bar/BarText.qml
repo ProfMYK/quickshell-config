@@ -3,10 +3,10 @@ import Quickshell.Io;
 import QtQuick // for Text
 import Quickshell.Hyprland
 
-import "../" 
+import ".."
 
 Text {
     font.family: "DepartureMono Nerd Font"
-    color: Theme.foreground
+    color: Colors.foreground
     anchors.centerIn: parent
 }

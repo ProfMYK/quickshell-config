@@ -4,7 +4,7 @@ import QtQuick // for Text
 import Quickshell.Hyprland
 
 import ".";
-import "./workspaces"
+import "workspaces"
 
 PanelWindow {
     anchors {
@@ -13,8 +13,7 @@ PanelWindow {
         right: true
     }
 
-
-    implicitHeight: 30
+    implicitHeight: 40
     color: "TRANSPARENT"
 
     Workspaces {}

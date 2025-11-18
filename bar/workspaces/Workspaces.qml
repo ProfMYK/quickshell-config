@@ -9,10 +9,15 @@ RowLayout {
     anchors.verticalCenter: parent.verticalCenter
     anchors.left: parent.left
     anchors.leftMargin: 20
+    property var workspaces: Hyprland.workspaces
 
-    Workspace {}
-    Workspace {}
-    Workspace {}
-    Workspace {}
-    Workspace {}
+    spacing: 7
+
+    Repeater {
+        model: workspaces
+
+        delegate: Workspace {
+            workspace: modelData
+        }
+    }
 }

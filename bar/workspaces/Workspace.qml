@@ -1,16 +1,26 @@
 import Quickshell
 import QtQuick
+import Quickshell.Hyprland
 
 import "../"
+import "../../"
 
-Rectangle {
-    height: 20
-    width: 20
-    color: "BLACK"
-    border.width: 2
-    border.color: "GRAY"
+Box {
+    height: 30
+    width: 30
+
+    property HyprlandWorkspace workspace
+    color: workspace.focused ? Colors.border : Colors.background
+
+    function getName(name) {
+        switch (name) {
+            case "1": return "";
+            case "2": return "󰖟";
+            default: return name;
+        }
+    }
 
     BarText {
-        text: "1"
+        text: getName(workspace.name)
     }
 }

@@ -3,7 +3,6 @@ import Quickshell.Io;
 import QtQuick // for Text
 import Quickshell.Hyprland
 
-import "../Theme.qml" as Theme
 import "."
 
 Box {
@@ -18,11 +17,12 @@ Box {
         color: "WHITE"
         id: titleText
 
-        text: windowTitle
+        text: windowTitle 
 
         Process {
             id: titleProc
-            command: ["sh", "-c", "hyprctl activewindow | grep title: | sed 's/[^:]*: //g'"]
+            // command: ["sh", "-c", "hyprctl activewindow | grep title: | sed 's/[^:]*: //g'"]
+            command: ["sh", "-c", "/home/fortran/.config/quickshell/scripts/getwindow.sh"]
             running: true
 
             stdout: SplitParser {
@@ -39,7 +39,7 @@ Box {
         }
     }
 
-    width: titleText.implicitWidth + 15
-    height: 20 
 
+    width: titleText.implicitWidth + 25
+    height: 30 
 }
