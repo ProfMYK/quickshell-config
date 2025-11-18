@@ -33,7 +33,6 @@ Box {
             stdout: SplitParser {
                 onRead: data => {
                     battery = parseInt(data)
-                    console.log(battery)
                 }
             }
         }

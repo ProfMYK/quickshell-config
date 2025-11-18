@@ -11,8 +11,8 @@ Text {
     anchors.centerIn: parent
     Behavior on opacity { 
         NumberAnimation { 
-            duration: 100 
-            easing.type: Easing.InOutQuad
+            duration: 250 
+            easing.type: Easing.InOutCubic
         } 
     } 
 }

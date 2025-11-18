@@ -35,10 +35,4 @@ Box {
             toggle = !toggle
         }
     }
-
-    Behavior on implicitWidth {
-        NumberAnimation {
-            duration: 50
-        }
-    }
 }

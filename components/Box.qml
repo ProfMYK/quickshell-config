@@ -11,4 +11,16 @@ Rectangle {
     color: Colors.background
     border.width: 2
     border.color: Colors.border
+    Behavior on implicitWidth {
+        NumberAnimation {
+            duration: 150
+            easing.type: Easing.InOutCubic
+        }
+    }
+    Behavior on width {
+        NumberAnimation {
+            duration: 150
+            easing.type: Easing.InOutCubic
+        }
+    }
 }
