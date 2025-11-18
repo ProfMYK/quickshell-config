@@ -8,7 +8,6 @@ import "."
 RowLayout {
     anchors.verticalCenter: parent.verticalCenter
     anchors.left: parent.left
-    anchors.leftMargin: 20
     property var workspaces: Hyprland.workspaces
 
     spacing: 7

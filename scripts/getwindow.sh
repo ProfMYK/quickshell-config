@@ -9,6 +9,8 @@ if [ -z "$title" ]; then
     echo "󰍹 Desktop"
 elif [ $class = "kitty" ]; then
     echo "󰄛 Kitty"
+elif [ $class = "firefox" ]; then
+    echo "󰈹" $(echo "$title" | cut -c 1-$(( ${#title} - 18 )))
 else
     echo "$title"
 fi

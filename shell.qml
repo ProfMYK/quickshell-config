@@ -3,7 +3,11 @@ import Quickshell.Io;
 import QtQuick // for Text
 import Quickshell.Hyprland
 
-import "bar";
+import "bar"
+import "clock"
 
-Bar {}
+Scope {
+    Bar {}
+    Clock {}
+}
 

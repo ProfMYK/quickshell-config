@@ -4,6 +4,7 @@ import QtQuick // for Text
 import Quickshell.Hyprland
 
 import "."
+import "../components"
 
 Box {
     anchors.centerIn: parent
