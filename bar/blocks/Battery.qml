@@ -17,7 +17,7 @@ Box {
         
         Process {
             id: statProc
-            command: ["sh", "-c", "acpi -b | grep -Eo Charging'"] 
+            command: ["sh", "-c", "acpi -b | grep -Eo Charging"] 
             running: true
 
             stdout: SplitParser {
@@ -71,6 +71,16 @@ Box {
             }
 
             return battery.toString() + "% " + icon;
+        }
+
+        Timer {
+            interval: 100
+            running: true
+            repeat: true
+            onTriggered: {
+                batProc.running = true
+                statProc.running = true
+            }
         }
 
         text: getText(battery, isCharging) 
