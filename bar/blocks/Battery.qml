@@ -16,6 +16,7 @@ Box {
         id: textWidget
         
         Process {
+            id: statProc
             command: ["sh", "-c", "acpi -b | grep -Eo Charging'"] 
             running: true
 
@@ -27,6 +28,7 @@ Box {
         }
 
         Process {
+            id: batProc
             command: ["sh", "-c", "acpi -b | grep -Eo '[0-9]+' | head -n 2 | tail -n 1"] 
             running: true
 
@@ -64,8 +66,9 @@ Box {
                 icon = "󰁹"
             }
 
-            if (isCharging)
+            if (isCharging) {
                 icon = "󰂄"
+            }
 
             return battery.toString() + "% " + icon;
         }
