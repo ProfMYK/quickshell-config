@@ -22,7 +22,7 @@ Box {
 
             stdout: SplitParser {
                 onRead: data => {
-                    isCharging = data == "Charging"
+                    isCharging = (data == "Charging")
                 }
             }
         }

@@ -6,6 +6,7 @@ import Quickshell.Io
 
 Singleton {
     property color background: "#282a36"
+    property color background2: "#3d4052"
     property color foreground: "#f8f8f2"
     property color accent: "#50FA7B"
     property color alert: "#ff5555"

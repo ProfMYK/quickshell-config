@@ -8,6 +8,7 @@ RowLayout {
     anchors.verticalCenter: parent.verticalCenter
     anchors.right: parent.right
 
+    Volume {}
     Battery {}
     Clock {}
 }

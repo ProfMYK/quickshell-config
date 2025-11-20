@@ -9,6 +9,7 @@ import "../components"
 import "blocks"
 
 PanelWindow {
+    id: bar
     anchors {
         top: true
         left: true
