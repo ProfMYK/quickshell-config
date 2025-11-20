@@ -12,7 +12,7 @@ Text {
     Behavior on opacity { 
         NumberAnimation { 
             duration: 250 
-            easing.type: Easing.InOutCubic
+            easing.type: Easing.OutCubic
         } 
     } 
 }

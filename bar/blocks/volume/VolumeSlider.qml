@@ -19,13 +19,27 @@ Box {
         id: layout
         anchors.centerIn: parent
         RowLayout {
+            Layout.preferredWidth: 560
             BarText {
                 anchors.centerIn: undefined
                 text: {
-                    // application.name -> description -> name
                     const app = node.properties["application.name"] ?? (node.description != "" ? node.description : node.name);
                     const media = node.properties["media.name"];
                     return media != undefined ? `${app} - ${media}` : app;
+                }
+            }
+            HoverBox {
+                Layout.alignment: Qt.AlignRight
+                implicitWidth: text.width + 25
+
+                BarText {
+                    id: text
+                    text: node.audio.muted ? "unmute" : "mute"
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: node.audio.muted = !node.audio.muted
                 }
             }
 
@@ -33,7 +47,7 @@ Box {
         RowLayout {
             BarText {
                 anchors.centerIn: undefined
-                Layout.preferredWidth: 40
+                Layout.preferredWidth: 50
                 text: "󰕾 " + `${Math.floor(node.audio.volume * 100)}%`
             }
             Slider {

@@ -11,4 +11,5 @@ RowLayout {
     Volume {}
     Battery {}
     Clock {}
+    NotificationManager {}
 }

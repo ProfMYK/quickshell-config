@@ -22,6 +22,9 @@ Box {
     }
 
     function getBackgroundColor(focused, hovering) {
+        if (hovering) {
+            return Colors.background2
+        }
         if (focused) {
             return Colors.border;
         }
@@ -31,7 +34,7 @@ Box {
     MouseArea {
         id: mouseArea
         anchors.fill: parent
-
+        hoverEnabled: true
         onClicked: {
             Hyprland.dispatch("workspace " + workspace.name)
         }

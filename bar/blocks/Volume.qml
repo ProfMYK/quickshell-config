@@ -8,24 +8,16 @@ import Quickshell.Services.Pipewire
 
 import "."
 import "../../components"
-import "controllers"
+import "../.."
+import "volume"
 
-Box {
+HoverBox {
     id: box
     implicitWidth: volumeText.width + 25
-    property bool is_visible: true
+    property bool is_visible: false
     BarText {
         id: volumeText
         text: "󰕾 " + `${Math.floor(linkTracker.node.audio.volume * 100)}%`
-    }
-
-    MouseArea {
-        id: area
-        anchors.fill: parent
-        hoverEnabled: true
-        onClicked: {
-            is_visible = !is_visible
-        }
     }
 
     PwNodeLinkTracker {
@@ -36,5 +28,13 @@ Box {
     VolumeController {
         isOpen: box.is_visible 
         node: linkTracker.node
+    }
+
+    MouseArea {
+        id: area
+        anchors.fill: parent
+        onClicked: {
+            is_visible = !is_visible
+        }
     }
 }

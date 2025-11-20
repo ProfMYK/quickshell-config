@@ -6,7 +6,7 @@ import ".."
 import "../.."
 import "../../components"
 
-Box {
+HoverBox {
     implicitWidth: text.implicitWidth + 25
     property bool toggle: true
 
@@ -30,7 +30,6 @@ Box {
     MouseArea {
         id: mouseArea
         anchors.fill: parent
-
         onClicked: {
             toggle = !toggle
         }
